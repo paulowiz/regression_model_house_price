@@ -14,8 +14,5 @@ jobs:
     runs-on: self-hosted
 
     steps:
-    - name: Stop pm2
-      run: pm2 stop API_HOUSEPREDICTION
-      if: ${{failure()}}
-    - name: Start pm2
-      run: pm2 start pm2.config.js
+    - name: exec python
+      run: uvicorn app.main:app --host 0.0.0.0 --port $PORT
