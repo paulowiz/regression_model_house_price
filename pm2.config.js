@@ -2,7 +2,7 @@ module.exports = {
   apps: [
     {
       name: 'API_HOUSEPREDICTION',
-      script: './app/main.py',
+      script: 'uvicorn app.main:app --host 0.0.0.0 --port $PORT',
       autorestart: true,
       watch: false,
       exec_mode: 'fork',
