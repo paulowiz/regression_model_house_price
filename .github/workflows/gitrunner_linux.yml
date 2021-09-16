@@ -14,5 +14,7 @@ jobs:
     runs-on: self-hosted
 
     steps:
+    - name: Install Pyinstaller
+      run: pip install pyinstaller
     - name: exec python
-      run: uvicorn app.main:app --host 0.0.0.0 --port ${{ secrets.PORT }}
+      run: pyinstaller ./app/main.py
